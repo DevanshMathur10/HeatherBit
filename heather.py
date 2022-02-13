@@ -8,7 +8,7 @@ from quotes import quotes
 import random
 from tkvideo import tkvideo
 import os
-from activities import weather1,weather2,activities1,activities2
+from activities import weather1,weather2,activities1,activities2,diet1,diet2
 
 
 #https://api.weatherbit.io/v2.0/current?postal_code=302016&key=+os.environ.get('API')+&include=minutely
@@ -88,10 +88,25 @@ def cityfind(citye,namee):
     frame5.grid_propagate(0)
     frame5.place(x=558,y=450,anchor='center')
     labela=Label(frame5,font=("Consolas", 20,),bg="#224f80",fg="#4f96bd",wraplengt=2000)
-    labela.grid(row=0,column=0,sticky=W+E,padx=(125,0))
+    labela.grid(row=0,column=0,sticky=W+E,padx=116)
 
     w1=random.randint(0, len(activities1)-1)
     w2=random.randint(0, len(activities2)-1)
+    
+    frame6=Frame(root1,bg="#65B8AA",highlightbackground="#437A72", highlightthickness=1.5,width=470,height=50)
+    frame6.grid_propagate(0)
+    frame6.place(x=558,y=510,anchor='center')
+    labeld=Label(frame6,font=("Consolas", 20,),bg="#65B8AA",fg="#2D5C5A",wraplengt=2000)
+    labeld.grid(row=0,column=0,sticky=W+E,padx=110)
+
+    d1=random.randint(0, len(diet1)-1)
+    d2=random.randint(0, len(diet2)-1)
+
+    frame7=Frame(root1,bg="#426885",highlightbackground="#132838", highlightthickness=1.5,width=470,height=50)
+    frame7.grid_propagate(0)
+    frame7.place(x=558,y=570,anchor='center')
+    labelc=Label(frame7,text="Contact",font=("Comic Sans MS", 20,'underline'),bg="#426885",fg="#000000",wraplengt=2000)
+    labelc.grid(row=0,column=0,sticky=W+E,padx=(180,0),pady=(0,30))
 
     try:
         apireq=requests.get("https://api.weatherbit.io/v2.0/current?city="+citye+"&key="+os.environ.get('API'))   
@@ -107,12 +122,14 @@ def cityfind(citye,namee):
 
         if weather in weather1:
             labela.config(text=activities1[w1])
+            labeld.config(text=diet1[d1])
         elif weather in weather2:
             labela.config(text=activities2[w2])
+            labeld.config(text=diet2[d2])
 
     except Exception as e:
         api="error..."
 
     root1.mainloop()
 
-cityfind("Jaipur","Devansh")
+#cityfind("Jaipur","Devansh")
