@@ -1,9 +1,5 @@
 from tkinter import *
-import phonenumbers
-from phonenumbers import geocoder
-from PIL import Image
 from tkvideo import tkvideo
-from PIL import ImageTk
 from heather import cityfind
 
 root=Tk()
@@ -22,13 +18,17 @@ name=Label(frame,text="NAME",background="#2896BD",fg='black', font=('Book Antiqu
 name.grid(row=0,column=0,padx=8,pady=(5,0))
 city=Label(frame,text="CITY",background="#2896BD",fg='black', font=('Book Antiqua', 11))
 city.grid(row=1,column=0)
+pincode=Label(frame,text="PINCODE",background="#2896BD",fg='black', font=('Book Antiqua', 11))
+pincode.grid(row=2,column=0)
 
 name_box=Entry(frame,width=35,borderwidth=2)
 name_box.grid(row=0,column=1,pady=(5,0),padx=10)
 city_box=Entry(frame,width=35,borderwidth=2)
 city_box.grid(row=1,column=1)
+pin_box=Entry(frame,width=35,borderwidth=2)
+pin_box.grid(row=2,column=1)
 
 sendbtn=Button(frame,text="SUBMIT",command=lambda: cityfind(city_box.get(),name_box.get()))
-sendbtn.grid(row=2,column=1,columnspan=2,padx=10,pady=5,ipadx=50)
+sendbtn.grid(row=3,column=1,columnspan=2,padx=10,pady=5,ipadx=50)
 
 root.mainloop()
