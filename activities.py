@@ -52,9 +52,17 @@ activities1=[
 activities2=[
     "Go for a walk!",
     "Workout at Home!",
-    #"Do a surynamaskar!",
-    #"Do 30 pushups!",
-    #"Go for a run!",
-    #"Do a chakrasana!",
-    #"Do a Cobra Strech!"
+    "Do a surynamaskar!",
+    "Do 30 pushups!",
+    "Go for a run!",
+    "Do a chakrasana!",
+    "Do a Cobra Strech!"
+]
+
+diet1=[
+    "Eat healthy food!"
+]
+
+diet2=[
+    "Eat healthy food!"
 ]
